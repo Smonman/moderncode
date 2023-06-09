@@ -1,0 +1,208 @@
+%%% MODERN CODE
+% Author: Simon Josef Kreuzpointner
+% Date: 09.06.2023
+% Version: 0.1.0
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{moderncode}[2023/06/09 modern code]
+
+\RequirePackage[utf8]{inputenc} % input encoding
+\RequirePackage[T1]{fontenc} % font encoding for umlaute
+\RequirePackage{xcolor}
+\RequirePackage[many]{tcolorbox}
+
+\definecolor{codegray}{HTML}{adb5bd}
+\definecolor{codegraylighter}{HTML}{f8f9fa}
+\definecolor{codegraylight}{HTML}{e9ecef}
+\definecolor{codegraydark}{HTML}{343a40}
+\definecolor{codegraydarker}{HTML}{212529}
+\definecolor{codegreen}{HTML}{198754}
+\definecolor{codeblue}{HTML}{1733BF}
+
+\tcbuselibrary{listingsutf8}
+\tcbuselibrary{breakable}
+
+\NewTotalTCBox{\moderncodeinline}{v}{
+    verbatim,
+    arc=2pt,
+    boxsep=0.2em,
+    boxrule=0.5pt,
+    titlerule=0pt,
+    left=0em,
+    top=0ex,
+    right=0em,
+    bottom=0ex,
+    colframe=codegraylight,
+    colback=codegraylighter,
+}{%
+   \lstinline^#1^%
+}
+
+\NewTotalTCBox{\moderncodekey}{v}{
+    verbatim,
+    enhanced,
+    arc=1pt,
+    boxsep=0.2em,
+    boxrule=0.5pt,
+    titlerule=0pt,
+    left=0em,
+    top=0ex,
+    right=0em,
+    bottom=0ex,
+    colframe=codegraydarker,
+    colback=codegraydark,
+    coltext=codegraylight,
+    fuzzy shadow={0pt}{-1pt}{0.1pt}{0.5pt}{codegraydarker},
+}{%
+   \lstinline[basicstyle=\sffamily\small]^#1^%
+}
+
+\newtcblisting{moderncode}[2]{
+    listing only,
+    arc=3pt,
+    boxsep=0.5em,
+    boxrule=1pt,
+    titlerule=0pt,
+    left=2.5em,
+    top=0.5ex,
+    right=0.3em,
+    bottom=0.3ex,
+    colframe=codegraylight,
+    colback=codegraylighter,
+    enhanced jigsaw,
+    breakable,
+    listing options={
+        backgroundcolor=,
+        framerule=0pt,
+        framesep=0em,
+        rulesep=0em,
+        xleftmargin=0em,
+        xrightmargin=0em,
+        aboveskip=0ex,
+        belowskip=0ex,
+        frame=,
+        stepnumber=1,
+        #1%
+    },
+    halign title=center,
+    coltitle=codegray,
+    fonttitle=\ttfamily,
+    coltitle=codegraydarker,
+    #2%
+}
+
+\newtcblisting{moderncodeout}[2]{
+    listing only,
+    arc=3pt,
+    boxsep=0.5em,
+    boxrule=1pt,
+    titlerule=0pt,
+    left=0.3em,
+    top=0.5ex,
+    right=0.3em,
+    bottom=0.3ex,
+    colframe=codegraylight,
+    colback=codegraylighter,
+    enhanced jigsaw,
+    breakable,
+    listing options={
+        backgroundcolor=,
+        framerule=0pt,
+        framesep=0em,
+        rulesep=0em,
+        xleftmargin=0em,
+        xrightmargin=0em,
+        aboveskip=0ex,
+        belowskip=0ex,
+        frame=,
+        stepnumber=0,
+        #1%
+    },
+    halign title=center,
+    coltitle=codegray,
+    fonttitle=\ttfamily,
+    coltitle=codegraydarker,
+    #2%
+}
+
+%%% LSTLISTING STYLE
+\lstdefinestyle{lststandardstyle}{
+    frame=single,
+    framerule=1pt,
+    framesep=0.2em,
+    framexleftmargin=2em,
+    xleftmargin=2.3em,
+    xrightmargin=0.4em,
+    aboveskip=0ex,
+    belowskip=0ex,
+    rulesep=0em,
+    rulecolor=\color{codegraylight},
+    backgroundcolor=\color{codegraylighter},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=t,
+    commentstyle=\color{codegray},
+    deletekeywords={},
+    extendedchars=true,
+    firstnumber=1,
+    keepspaces=true,
+    keywordstyle=\color{codeblue}\bfseries,
+    morekeywords={*,...},
+    stringstyle=\color{codegreen},
+    numbers=left,
+    numbersep=1em,
+    numberstyle=\ttfamily\small\color{codegray},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    stepnumber=1,
+    tabsize=4,
+    escapeinside={(*}{*)},
+    linewidth=\textwidth,
+    postbreak=\mbox{\textcolor{codegray}{\(\hookrightarrow\)}\space},
+}
+
+\lstdefinestyle{lstoutput}{
+    frame=single,
+    framerule=0.1em,
+    framesep=0.2em,
+    framexleftmargin=0em,
+    xleftmargin=0.3em,
+    xrightmargin=0.4em,
+    aboveskip=0ex,
+    belowskip=0ex,
+    rulesep=0em,
+    rulecolor=\color{codegraylight},
+    basicstyle=\ttfamily,
+    backgroundcolor=\color{codegraylighter},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=t,
+    extendedchars=true,
+    firstnumber=1,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    stepnumber=0,
+    tabsize=4,
+    title=Output,
+    escapeinside={(*}{*)},
+    linewidth=\textwidth,
+}
+
+\lstdefinelanguage{pseudo}{
+    mathescape=true,
+    basicstyle=,
+    keywordstyle=\color{black}\bfseries\em,
+    morekeywords={function, returns, return, if, then, else, and, or, not, loop, do, while, for, each, switch, case, foreach, begin, end, endif, until, repeat, null},
+    sensitive=false,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]"
+}
+
+\lstset{
+    style=lststandardstyle
+}

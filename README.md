@@ -4,7 +4,7 @@ This Latex package aims to display code in a beautiful way.
 
 ## What does this package do?
 
-This package provides `tcolorbox` environments for block and inline code, aswell as `lstlisting` styles. This package loads [`tcolorbox`](https://www.ctan.org/pkg/tcolorbox) and [`listings`](https://ctan.org/pkg/listings).
+This package provides `tcolorbox` environments for block and inline code, aswell as `lstlisting` styles. This package loads [`tcolorbox`](https://www.ctan.org/pkg/tcolorbox), [`listings`](https://ctan.org/pkg/listings) and [`xcolor`](https://ctan.org/pkg/xcolor).
 
 ## How do I use this package?
 

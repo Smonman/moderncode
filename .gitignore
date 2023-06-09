@@ -280,5 +280,5 @@ TSWLatexianTemp*
 
 *.zip
 *.bat
-./releases/
-./out/
+releases/
+out/

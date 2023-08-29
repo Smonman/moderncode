@@ -13,7 +13,7 @@ First, add the `moderncode.sty` file to your project, and include it via
 \usepackage{moderncode}
 ```
 
-Now, you can use the environments `moderncode` and `moderncodeout`, aswell as the commands `moderncodeinline` and `moderncodekey`. If you wish to use lstlistings instead, you can do that aswell. This package also provides a pseudo language style called `pseudo`.
+Now, you can use the environments `moderncode` and `moderncodeout`, aswell as the commands `moderncodeinline` and `moderncodekey`. If you wish to use `lstlisting` instead, you can do that aswell. This package also provides a pseudo language style called `pseudo`.
 
 ### `moderncode`
 

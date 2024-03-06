@@ -22,7 +22,7 @@
 \tcbuselibrary{listingsutf8}
 \tcbuselibrary{breakable}
 
-\NewTotalTCBox{\moderncodeinline}{v}{
+\NewTotalTCBox{\moderncodeinline}{O{}v}{
     verbatim,
     arc=2pt,
     boxsep=0.2em,
@@ -35,7 +35,7 @@
     colframe=codegraylight,
     colback=codegraylighter,
 }{%
-    \lstinline^#1^%
+    \lstinline[language=#1]^#2^%
 }
 
 \NewTotalTCBox{\moderncodekey}{v}{

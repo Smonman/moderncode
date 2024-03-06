@@ -1,0 +1,6 @@
+verbatimEnvironments:
+  moderncode: 1
+  moderncodeout: 1
+
+verbatimCommands:
+  moderncodeinline: 1

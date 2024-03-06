@@ -34,6 +34,12 @@ Now, you can use the environments `moderncode` and `moderncodeout`, as well as t
 
 ## Changelog
 
+### 0.2.0
+
+- add optional argument for the language for the `moderncodeinline` command
+- add local latex indent config file
+- fix typos
+
 ### 0.1.0
 
 initial version

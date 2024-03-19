@@ -34,6 +34,11 @@ Now, you can use the environments `moderncode` and `moderncodeout`, as well as t
 
 ## Changelog
 
+### 0.3.0
+
+- add `mathescape` to standard `lstlisting` style
+- change the arguments of the `moderncode` and `moderncodeout` environment to be optional. The first argument controls settings for the internal `listing`. The first entry will always be interpreted as a language. The second optional argument controls settings for the `tcolorbox`
+
 ### 0.2.0
 
 - add optional argument for the language for the `moderncodeinline` command

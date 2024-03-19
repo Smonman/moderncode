@@ -1,10 +1,10 @@
 %%% MODERN CODE
 % Author: Simon Josef Kreuzpointner
-% Date: 06.03.2024
-% Version: 0.2.0
+% Date: 19.03.2024
+% Version: 0.3.0
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{moderncode}[2024/03/06 modern code]
+\ProvidesPackage{moderncode}[2024/03/19 modern code]
 
 \RequirePackage[utf8]{inputenc} % input encoding
 \RequirePackage[T1]{fontenc} % font encoding for umlaute
@@ -22,7 +22,7 @@
 \tcbuselibrary{listingsutf8}
 \tcbuselibrary{breakable}
 
-\NewTotalTCBox{\moderncodeinline}{O{}v}{
+\NewTotalTCBox{\moderncodeinline}{ O{} v }{%
     verbatim,
     arc=2pt,
     boxsep=0.2em,
@@ -38,7 +38,7 @@
     \lstinline[language=#1]^#2^%
 }
 
-\NewTotalTCBox{\moderncodekey}{v}{
+\NewTotalTCBox{\moderncodekey}{ v }{%
     verbatim,
     enhanced,
     arc=1pt,
@@ -57,7 +57,7 @@
     \lstinline[basicstyle=\sffamily\small]^#1^%
 }
 
-\newtcblisting{moderncode}[2]{
+\DeclareTCBListing{moderncode}{ O{} O{} }{%
     listing only,
     arc=3pt,
     boxsep=0.5em,
@@ -82,7 +82,7 @@
             belowskip=0ex,
             frame=,
             stepnumber=1,
-            #1%
+            language=#1%
         },
     halign title=center,
     coltitle=codegray,
@@ -91,7 +91,7 @@
     #2%
 }
 
-\newtcblisting{moderncodeout}[2]{
+\DeclareTCBListing{moderncodeout}{ O{} O{} }{
     listing only,
     arc=3pt,
     boxsep=0.5em,
@@ -158,6 +158,7 @@
     showtabs=false,
     stepnumber=1,
     tabsize=4,
+    mathescape=true,
     escapeinside={(*}{*)},
     linewidth=\textwidth,
     postbreak=\mbox{\textcolor{codegray}{\(\hookrightarrow\)}\space},

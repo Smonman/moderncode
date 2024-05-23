@@ -1,10 +1,10 @@
 %%% MODERN CODE
 % Author: Simon Josef Kreuzpointner
-% Date: 19.03.2024
-% Version: 0.3.0
+% Date: 23.05.2024
+% Version: 0.4.0
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{moderncode}[2024/03/19 modern code]
+\ProvidesPackage{moderncode}[2024/05/23 modern code]
 
 \RequirePackage[utf8]{inputenc} % input encoding
 \RequirePackage[T1]{fontenc} % font encoding for umlaute
@@ -55,6 +55,41 @@
     fuzzy shadow={0pt}{-1pt}{0.1pt}{0.5pt}{codegraydarker},
 }{%
     \lstinline[basicstyle=\sffamily\small]^#1^%
+}
+
+\NewTCBInputListing{\moderncodeinput}{ O{} O{} m }{%
+    listing only,
+    arc=3pt,
+    boxsep=0.5em,
+    boxrule=1pt,
+    titlerule=0pt,
+    left=2.5em,
+    top=0.5ex,
+    right=0.3em,
+    bottom=0.3ex,
+    colframe=codegraylight,
+    colback=codegraylighter,
+    enhanced jigsaw,
+    breakable,
+    listing options={
+            backgroundcolor=,
+            framerule=0pt,
+            framesep=0em,
+            rulesep=0em,
+            xleftmargin=0em,
+            xrightmargin=0em,
+            aboveskip=0ex,
+            belowskip=0ex,
+            frame=,
+            stepnumber=1,
+            language=#1%
+        },
+    listing file={#3},
+    halign title=center,
+    coltitle=codegray,
+    fonttitle=\ttfamily,
+    coltitle=codegraydarker,
+    #2%
 }
 
 \DeclareTCBListing{moderncode}{ O{} O{} }{%

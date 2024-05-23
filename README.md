@@ -14,7 +14,7 @@ First, add the `moderncode.sty` file to your project, and include it via
 \usepackage{moderncode}
 ```
 
-Now, you can use the environments `moderncode` and `moderncodeout`, as well as the commands `moderncodeinline` and `moderncodekey`. If you wish to use `lstlisting` instead, you can do that as well. This package also provides a pseudo language style called `pseudo`.
+Now, you can use the environments `moderncode` and `moderncodeout`, as well as the commands `moderncodeinline`, `moderncodeinput` and `moderncodekey`. If you wish to use `lstlisting` instead, you can do that as well. This package also provides a pseudo language style called `pseudo`.
 
 ### `moderncode`
 
@@ -33,6 +33,10 @@ Now, you can use the environments `moderncode` and `moderncodeout`, as well as t
 ![grafik](https://github.com/Smonman/moderncode/assets/36928284/003b1408-d9ac-4be2-8612-795bc54bcefe)
 
 ## Changelog
+
+### 0.4.0
+
+- add `moderncodeinput`
 
 ### 0.3.0
 

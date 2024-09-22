@@ -16,6 +16,11 @@ First, add the `moderncode.sty` file to your project, and include it via
 
 Now, you can use the environments `moderncode` and `moderncodeout`, as well as the commands `moderncodeinline`, `moderncodeinput` and `moderncodekey`. If you wish to use `lstlisting` instead, you can do that as well. This package also provides a pseudo language style called `pseudo`.
 
+The `moderncode` environment has two optional parameters.
+The first argument will be passed to the underlying `listing`, while the second will be passed to the `tcolorbox`.
+However, the first argument has another important aspect to note: while it accepts a list of keys, the first key will *always* be passed to the language property.
+This is done for ease of use, as usually no further keys are required.
+
 ### `moderncode`
 
 ![moderncode](https://github.com/Smonman/moderncode/assets/36928284/7d2cde25-9cdb-4c5f-b9b9-d2d851be498f)

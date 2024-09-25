@@ -39,6 +39,10 @@ This is done for ease of use, as usually no further keys are required.
 
 ## Changelog
 
+### 0.4.1
+
+- add `.chktexrc` file
+
 ### 0.4.0
 
 - add `moderncodeinput`

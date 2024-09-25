@@ -1,0 +1,9 @@
+VerbEnvir
+{
+	moderncode moderncodeout
+}
+
+WipeArg
+{
+	\moderncodeinline:{} \moderncodeinline:[]{} \moderncodekey:{} \moderncodekey:[]{}
+}

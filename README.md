@@ -39,6 +39,16 @@ This is done for ease of use, as usually no further keys are required.
 
 ## Changelog
 
+### 0.5.0
+
+- minute spacing adjustments
+- add new dedicated argument for the language
+- add `escapechar` `!`
+- adjust `escapeinside` to be `<*` and `*>` respectively. The old values `(*` and `*)` could lead to errors when displaying C code with function pointers, and some IDEs might complain about improper parenthesis placement.
+- the `skins` library from `tcb` is now also loaded
+- the styles of `moderncode`, `moderncodeinline` and `moderncodekey` can now be accessed via the keys `/tcb/moderncode`, `tcb/moderncode/inline` and `tcb/moderncode/key/` respectivly.
+- remove `breakable` keyword from `moderncode`, `moderncodeout` and `\moderncodeinput` as it could break when used in `tcbraster` or inside of `minipage`. Use `breakable=true` in order to restore old behavior.
+
 ### 0.4.1
 
 - add `.chktexrc` file

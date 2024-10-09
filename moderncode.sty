@@ -1,10 +1,10 @@
 %%% MODERN CODE
 % Author: Simon Josef Kreuzpointner
-% Date: 25.09.2024
-% Version: 0.4.1
+% Date: 09.10.2024
+% Version: 0.5.0
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{moderncode}[2024/09/25 modern code]
+\ProvidesPackage{moderncode}[2024/10/09 modern code]
 
 \RequirePackage[utf8]{inputenc} % input encoding
 \RequirePackage[T1]{fontenc} % font encoding for umlaute
@@ -21,142 +21,113 @@
 
 \tcbuselibrary{listingsutf8}
 \tcbuselibrary{breakable}
+\tcbuselibrary{skins}
 
-\NewTotalTCBox{\moderncodeinline}{ O{} v }{%
+\tcbset{%
+    moderncode/.style={
+            enhanced jigsaw,
+            arc=3pt,
+            boxrule=1pt,
+            boxsep=0.5em,
+            titlerule=0pt,
+            left=2.5em,
+            top=0.25em,
+            right=0.3em,
+            bottom=0.25em,
+            colframe=codegraylight,
+            colback=codegraylighter,
+            halign title=center,
+            fonttitle=\ttfamily,
+            coltitle=codegraydarker,
+        },
+    moderncode/inline/.style={
+            standard,
+            arc=2pt,
+            boxrule=0.5pt,
+            boxsep=0.2em,
+            titlerule=0em,
+            left=0.1em,
+            top=0em,
+            right=0.05em,
+            bottom=0em,
+            colframe=codegraylight,
+            colback=codegraylighter,
+        },
+    moderncode/key/.style={
+            enhanced,
+            arc=1pt,
+            boxrule=0.5pt,
+            boxsep=0.2em,
+            titlerule=0pt,
+            left=0em,
+            top=0em,
+            right=0.08em,
+            bottom=0em,
+            colframe=codegraydarker,
+            colback=codegraydark,
+            coltext=codegraylight,
+            fuzzy shadow={0pt}{-1pt}{0.1pt}{0.5pt}{codegraydarker},
+        }
+}
+
+\lstdefinestyle{tcboptions}{
+    backgroundcolor=,
+    framerule=0pt,
+    framesep=0em,
+    rulesep=0em,
+    xleftmargin=0em,
+    xrightmargin=0em,
+    aboveskip=0ex,
+    belowskip=0ex,
+    frame=,
+    stepnumber=1,
+}
+
+\NewTotalTCBox{\moderncodeinline}{ O{} O{} v }{%
     verbatim,
-    arc=2pt,
-    boxsep=0.2em,
-    boxrule=0.5pt,
-    titlerule=0pt,
-    left=0em,
-    top=0ex,
-    right=0em,
-    bottom=0ex,
-    colframe=codegraylight,
-    colback=codegraylighter,
+    moderncode/inline
 }{%
-    \lstinline[language=#1]^#2^%
+    \lstinline[language={#1},#2]^#3^%
 }
 
 \NewTotalTCBox{\moderncodekey}{ v }{%
     verbatim,
-    enhanced,
-    arc=1pt,
-    boxsep=0.2em,
-    boxrule=0.5pt,
-    titlerule=0pt,
-    left=0em,
-    top=0ex,
-    right=0em,
-    bottom=0ex,
-    colframe=codegraydarker,
-    colback=codegraydark,
-    coltext=codegraylight,
-    fuzzy shadow={0pt}{-1pt}{0.1pt}{0.5pt}{codegraydarker},
+    moderncode/key
 }{%
     \lstinline[basicstyle=\sffamily\small]^#1^%
 }
 
-\NewTCBInputListing{\moderncodeinput}{ O{} O{} m }{%
+\NewTCBInputListing{\moderncodeinput}{ O{} O{} O{} m }{%
     listing only,
-    arc=3pt,
-    boxsep=0.5em,
-    boxrule=1pt,
-    titlerule=0pt,
-    left=2.5em,
-    top=0.5ex,
-    right=0.3em,
-    bottom=0.3ex,
-    colframe=codegraylight,
-    colback=codegraylighter,
-    enhanced jigsaw,
-    breakable,
+    moderncode,
     listing options={
-            backgroundcolor=,
-            framerule=0pt,
-            framesep=0em,
-            rulesep=0em,
-            xleftmargin=0em,
-            xrightmargin=0em,
-            aboveskip=0ex,
-            belowskip=0ex,
-            frame=,
-            stepnumber=1,
-            language=#1%
+            style=tcboptions,
+            language={#1},
+            #2%
         },
-    listing file={#3},
-    halign title=center,
-    coltitle=codegray,
-    fonttitle=\ttfamily,
-    coltitle=codegraydarker,
-    #2%
+    listing file={#4},
+    #3%
 }
 
-\DeclareTCBListing{moderncode}{ O{} O{} }{%
+\DeclareTCBListing{moderncode}{ O{} O{} O{} }{%
     listing only,
-    arc=3pt,
-    boxsep=0.5em,
-    boxrule=1pt,
-    titlerule=0pt,
-    left=2.5em,
-    top=0.5ex,
-    right=0.3em,
-    bottom=0.3ex,
-    colframe=codegraylight,
-    colback=codegraylighter,
-    enhanced jigsaw,
-    breakable,
+    moderncode,
     listing options={
-            backgroundcolor=,
-            framerule=0pt,
-            framesep=0em,
-            rulesep=0em,
-            xleftmargin=0em,
-            xrightmargin=0em,
-            aboveskip=0ex,
-            belowskip=0ex,
-            frame=,
-            stepnumber=1,
-            language=#1%
+            style=tcboptions,
+            language={#1},
+            #2%
         },
-    halign title=center,
-    coltitle=codegray,
-    fonttitle=\ttfamily,
-    coltitle=codegraydarker,
-    #2%
+    #3%
 }
 
 \DeclareTCBListing{moderncodeout}{ O{} O{} }{
     listing only,
-    arc=3pt,
-    boxsep=0.5em,
-    boxrule=1pt,
-    titlerule=0pt,
-    left=0.3em,
-    top=0.5ex,
-    right=0.3em,
-    bottom=0.3ex,
-    colframe=codegraylight,
-    colback=codegraylighter,
-    enhanced jigsaw,
-    breakable,
+    moderncode,
     listing options={
-            backgroundcolor=,
-            framerule=0pt,
-            framesep=0em,
-            rulesep=0em,
-            xleftmargin=0em,
-            xrightmargin=0em,
-            aboveskip=0ex,
-            belowskip=0ex,
-            frame=,
-            stepnumber=0,
+            style=tcboptions,
+            numbers=none,
             #1%
         },
-    halign title=center,
-    coltitle=codegray,
-    fonttitle=\ttfamily,
-    coltitle=codegraydarker,
     #2%
 }
 
@@ -194,7 +165,8 @@
     stepnumber=1,
     tabsize=4,
     mathescape=true,
-    escapeinside={(*}{*)},
+    escapechar=!,
+    escapeinside={<*}{*>},
     linewidth=\textwidth,
     postbreak=\mbox{\textcolor{codegray}{\(\hookrightarrow\)}\space},
 }
@@ -224,7 +196,8 @@
     stepnumber=0,
     tabsize=4,
     title=Output,
-    escapeinside={(*}{*)},
+    escapechar=!,
+    escapeinside={<*}{*>},
     linewidth=\textwidth,
 }
 

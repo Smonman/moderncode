@@ -4,7 +4,11 @@ This Latex package aims to display code in a beautiful way.
 
 ## What does this package do?
 
-This package provides `tcolorbox` environments for block and inline code, as well as `lstlisting` styles. This package loads [`tcolorbox`](https://www.ctan.org/pkg/tcolorbox), [`listings`](https://ctan.org/pkg/listings) and [`xcolor`](https://ctan.org/pkg/xcolor).
+This package provides `tcolorbox` environments for block and inline code.
+This package loads [`tcolorbox`](https://www.ctan.org/pkg/tcolorbox), [`inputenc`](https://ctan.org/pkg/inputenc), [`fontenc`](https://ctan.org/pkg/fontenc) and [`xcolor`](https://ctan.org/pkg/xcolor).
+However, `tcolorbox` will load an array of further packages behind the scenes.
+
+If you use this package with the option `listings`, styles for `lstlistings` will also be provided.
 
 ## How do I use this package?
 
@@ -14,7 +18,15 @@ First, add the `moderncode.sty` file to your project, and include it via
 \usepackage{moderncode}
 ```
 
-Now, you can use the environments `moderncode` and `moderncodeout`, as well as the commands `moderncodeinline`, `moderncodeinput` and `moderncodekey`. If you wish to use `lstlisting` instead, you can do that as well. This package also provides a pseudo language style called `pseudo`.
+Now, you can use the environments `moderncode` and `moderncodeout`, as well as the commands `moderncodeinline`, `moderncodeinput` and `moderncodekey`.
+
+This package has two options:
+
+- `listings` (on by default), which enables the support for `lstlistings`
+- `minted` which switches to minted instead of `lstlistings`
+
+If you wish to use `lstlisting` instead, you can do that as well. This package also provides a pseudo language style called `pseudo`.
+These features, however, are only available when using the option `listings`.
 
 The `moderncode` environment has two optional parameters.
 The first argument will be passed to the underlying `listing`, while the second will be passed to the `tcolorbox`.
@@ -38,6 +50,12 @@ This is done for ease of use, as usually no further keys are required.
 ![grafik](https://github.com/Smonman/moderncode/assets/36928284/003b1408-d9ac-4be2-8612-795bc54bcefe)
 
 ## Changelog
+### 0.6.0
+
+- add support for `minted`, this can be selected through the `minted` package option
+- remove `many` package option from `tcolorbox`
+- adjust code spacing
+- `moderncodekey` now does not expect a verbatim argument
 
 ### 0.5.0
 

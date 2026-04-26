@@ -1,0 +1,73 @@
+\documentclass[10pt]{article}
+\usepackage[minted]{moderncode}
+
+\begin{document}
+\section{Moderncode}
+
+\begin{moderncode}[C][][adjusted title={Title}]
+int main(int ac, char *av[])
+{
+	printf("Hello, World");
+	return 0;
+}
+\end{moderncode}
+
+\begin{moderncode}[C][][adjusted title={This title is very very very very very very very very very long}]
+int main(int ac, char *av[])
+{
+	printf("Hello, World");
+	return 0;
+}
+\end{moderncode}
+
+\begin{moderncode}[C]
+int main(int ac, char *av[])
+{
+	printf("Hello, World");
+	return 0;
+}
+\end{moderncode}
+
+\begin{moderncode}[C][][adjusted title={This is a very long code}]
+int main(int ac, char *av[])
+{
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	printf("Hello, World");
+	return 0;
+}
+\end{moderncode}
+
+\moderncodeinput[TeX][][breakable=true]{example-minted.tex}
+
+\subsection{Output}
+
+\begin{moderncodeout}
+Enter a positive integer: 100
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+\end{moderncodeout}
+
+\subsection{Inline}
+
+\subsubsection{Inline Code}
+
+This is an inline modern code display: \moderncodeinline{\LaTeX}. It is also possible to define a language: \moderncodeinline[SQL]{SELECT pg_relation_size('title_basics');}.
+
+\subsection{Inline Key}
+
+It also supports a key-like-style inline element: \moderncodekey{Ctrl} + \moderncodekey{C}
+
+\end{document}

@@ -50,6 +50,11 @@ This is done for ease of use, as usually no further keys are required.
 ![grafik](https://github.com/Smonman/moderncode/assets/36928284/003b1408-d9ac-4be2-8612-795bc54bcefe)
 
 ## Changelog
+
+### 0.6.1
+
+- fix an error when using `moderncode` with `minted` with no language given
+
 ### 0.6.0
 
 - add support for `minted`, this can be selected through the `minted` package option

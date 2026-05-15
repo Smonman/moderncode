@@ -1,10 +1,10 @@
 %%% MODERN CODE
 % Author: Simon Josef Kreuzpointner
-% Date: 26.04.2026
-% Version: 0.6.0
+% Date: 15.05.2026
+% Version: 0.6.1
 
 \NeedsTeXFormat{LaTeX2e}%
-\ProvidesPackage{moderncode}[2026/04/26 modern code]%
+\ProvidesPackage{moderncode}[2026/05/15 modern code]%
 
 %%% Required Packages
 \RequirePackage[utf8]{inputenc}% input encoding
@@ -307,7 +307,7 @@
     }{%
         {\sffamily\small#1}%
     }
-    \NewTCBInputListing{\moderncodeinput}{ O{} O{} O{} m }{%
+    \NewTCBInputListing{\moderncodeinput}{ O{text} O{} O{} m }{%
         listing only,
         moderncode,
         minted language={#1},
@@ -317,7 +317,7 @@
         listing file={#4},
         #3%
     }
-    \DeclareTCBListing{moderncode}{ O{} O{} !O{} }{%
+    \DeclareTCBListing{moderncode}{ O{text} O{} !O{} }{%
         listing only,
         moderncode,
         minted language={#1},
@@ -329,6 +329,7 @@
     \DeclareTCBListing{moderncodeout}{ O{} !O{} }{
         listing only,
         moderncode,
+        minted language={text},
         minted options={
                 linenos=none,
                 numbersep=0pt,

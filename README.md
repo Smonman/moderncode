@@ -53,7 +53,7 @@ This is done for ease of use, as usually no further keys are required.
 
 ### 0.6.1
 
-- fix an error when using `monderncode` with `minted` with no language given
+- fix an error when using `moderncode` with `minted` with no language given
 
 ### 0.6.0
 

@@ -51,6 +51,10 @@ This is done for ease of use, as usually no further keys are required.
 
 ## Changelog
 
+### 0.6.2
+
+- add counters for listings, inline-listings and keys
+
 ### 0.6.1
 
 - fix an error when using `moderncode` with `minted` with no language given

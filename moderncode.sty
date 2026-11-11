@@ -1,10 +1,10 @@
 %%% MODERN CODE
 % Author: Simon Josef Kreuzpointner
-% Date: 15.05.2026
-% Version: 0.6.1
+% Date: 2026-11-11
+% Version: 0.6.2
 
 \NeedsTeXFormat{LaTeX2e}%
-\ProvidesPackage{moderncode}[2026/05/15 modern code]%
+\ProvidesPackage{moderncode}[2026/11/11 modern code]%
 
 %%% Required Packages
 \RequirePackage[utf8]{inputenc}% input encoding
@@ -39,6 +39,11 @@
 %%% TCB Libraries
 \tcbuselibrary{breakable}
 \tcbuselibrary{skins}
+
+%%% COUNTER
+\newcounter{moderncodecounter}
+\newcounter{moderncodeinlinecounter}
+\newcounter{moderncodekeycounter}
 
 %%% moderncode with listings option
 \ifmc@listings%
@@ -102,19 +107,19 @@
         frame=,
         stepnumber=1,
     }
-    \NewTotalTCBox{\moderncodeinline}{ O{} O{} v }{%
+    \NewTotalTCBox[use counter=moderncodeinlinecounter]{\moderncodeinline}{ O{} O{} v }{%
         verbatim,
         moderncode/inline
     }{%
         \lstinline[language={#1},#2]^#3^%
     }
-    \NewTotalTCBox{\moderncodekey}{ m }{%
+    \NewTotalTCBox[use counter=moderncodekeycounter]{\moderncodekey}{ m }{%
         verbatim,
         moderncode/key
     }{%
         {\sffamily\small#1}%
     }
-    \NewTCBInputListing{\moderncodeinput}{ O{} O{} O{} m }{%
+    \NewTCBInputListing[use counter=moderncodecounter]{\moderncodeinput}{ O{} O{} O{} m }{%
         listing only,
         moderncode,
         listing options={
@@ -125,7 +130,7 @@
         listing file={#4},
         #3%
     }
-    \DeclareTCBListing{moderncode}{ O{} O{} O{} }{%
+    \DeclareTCBListing[use counter=moderncodecounter]{moderncode}{ O{} O{} O{} }{%
         listing only,
         moderncode,
         listing options={
@@ -135,7 +140,7 @@
             },
         #3%
     }
-    \DeclareTCBListing{moderncodeout}{ O{} !O{} }{
+    \DeclareTCBListing[use counter=moderncodecounter]{moderncodeout}{ O{} !O{} }{
         listing only,
         moderncode,
         listing options={
@@ -295,19 +300,19 @@
     \renewcommand{\theFancyVerbLine}{%
         \textcolor{codegray}{\ttfamily\small{\arabic{FancyVerbLine}}}%
     }
-    \NewTotalTCBox{\moderncodeinline}{ O{text} O{} v }{%
+    \NewTotalTCBox[use counter=moderncodeinlinecounter]{\moderncodeinline}{ O{text} O{} v }{%
         verbatim,
         moderncode/inline
     }{%
         \mintinline[#2]{#1}^#3^%
     }
-    \NewTotalTCBox{\moderncodekey}{ m }{%
+    \NewTotalTCBox[use counter=moderncodekeycounter]{\moderncodekey}{ m }{%
         verbatim,
         moderncode/key
     }{%
         {\sffamily\small#1}%
     }
-    \NewTCBInputListing{\moderncodeinput}{ O{text} O{} O{} m }{%
+    \NewTCBInputListing[use counter=moderncodecounter]{\moderncodeinput}{ O{text} O{} O{} m }{%
         listing only,
         moderncode,
         minted language={#1},
@@ -317,7 +322,7 @@
         listing file={#4},
         #3%
     }
-    \DeclareTCBListing{moderncode}{ O{text} O{} !O{} }{%
+    \DeclareTCBListing[use counter=moderncodecounter]{moderncode}{ O{text} O{} !O{} }{%
         listing only,
         moderncode,
         minted language={#1},
@@ -326,7 +331,7 @@
             },
         #3%
     }
-    \DeclareTCBListing{moderncodeout}{ O{} !O{} }{
+    \DeclareTCBListing[use counter=moderncodecounter]{moderncodeout}{ O{} !O{} }{
         listing only,
         moderncode,
         minted language={text},

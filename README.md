@@ -51,6 +51,12 @@ This is done for ease of use, as usually no further keys are required.
 
 ## Changelog
 
+### 0.6.3
+
+- remove verbatim constraint on `moderncodekey`
+- modified options on inline color boxes. Added `on line`, `nobeforeafter` and `tcbox raise base`
+- no longer forces font style on `moderncodekey`. The original font settings have been moved to the option `fontupper` unchanged.
+
 ### 0.6.2
 
 - add counters for listings, inline-listings and keys
